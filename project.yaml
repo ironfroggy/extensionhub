@@ -1,2 +1,11 @@
-{DEBUG: true, domain: extensionhub.pantechnoco.com, extends: ../pantechnoco/project.yaml,
-  project_library: extensionhub, version: '0.1'}
+{
+        DEBUG: true, 
+        domain: extensionhub.pantechnoco.com, 
+        extends: ../pantechnoco/project.yaml,
+        project_library: extensionhub, 
+        version: '0.1',
+        django_apps:
+                - 'registration'
+        django_extrasettings:
+                - ACCOUNT_ACTIVATION_DAYS: 7
+}
