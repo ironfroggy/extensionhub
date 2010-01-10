@@ -5,6 +5,7 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^accounts/', include('registration.backends.default.urls')),
     # Example:
     # (r'^extensionhub/', include('extensionhub.foo.urls')),
 
