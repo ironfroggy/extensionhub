@@ -14,6 +14,14 @@
 	<body>
 		<div id="header">
 			{% block header %}{% endblock %}
+			{% if user.is_authenticated %}
+			Welcome {{ user.username }} 
+			<a href="{% url auth_logout %}">Log out</a> | 
+			<a href="{% url auth_password_change %}">Change password</a>
+			{% else %}
+			<a href="{% url auth_login %}">Log in</a> | 
+			<a href="{% url auth_register %}">Register</a>
+			{% endif %}
 		</div>
 		<div id="content">
 			{% block content %}{% endblock %}
