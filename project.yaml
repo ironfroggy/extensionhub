@@ -1,4 +1,4 @@
-DEBUG: true, 
+DEBUG: True, 
 domain: extensionhub.pantechnoco.com 
 project_library: extensionhub 
 version: '0.1'
