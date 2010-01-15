@@ -1,0 +1,6 @@
+[submodule "apps/forkws"]
+	path = apps/forkws
+	url = git@github.com:ironfroggy/fork-ws.git
+[submodule "externals/fork-ws"]
+	path = externals/fork-ws
+	url = git@github.com:ironfroggy/fork-ws.git

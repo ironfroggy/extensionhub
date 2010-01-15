@@ -1,4 +1,5 @@
 extensionhub/settings.py
 extensionhub/manager.py
 project_version.yaml
+project_extends.yaml
 .DS_Store
