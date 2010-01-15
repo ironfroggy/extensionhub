@@ -1,6 +1,8 @@
 #!/usr/bin/env python
-import sys
-sys.path.append("/domains/0.1.v.extensionhub.pantechnoco.com/libs/")
+import sys, os
+import __main__
+
+sys.path.append(os.path.join(os.path.dirname(__main__.__file__), '..'))
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.

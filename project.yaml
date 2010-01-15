@@ -1,9 +1,12 @@
-DEBUG: true, 
+DEBUG: True, 
 domain: extensionhub.pantechnoco.com 
 project_library: extensionhub 
 version: '0.1'
 django_apps:
  - registration
-django_extrasettings:
- - ACCOUNT_ACTIVATION_DAYS: 7
+ - forkws
+ - "django.contrib.admin"
+django_extra_settings:
+   ACCOUNT_ACTIVATION_DAYS: 7
+   GIT_ROOT_PATH: /tmp/forkwsgitrepos
 
