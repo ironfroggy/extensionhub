@@ -1,3 +1,7 @@
+#hd h1 {
+	display: inline;
+}
+
 .right-align {
 	float: right;
 }

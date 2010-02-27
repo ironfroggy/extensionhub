@@ -7,32 +7,40 @@
 		<link rel="stylesheet" href="/media/css/reset-fonts.css" />
 		<link rel="stylesheet" href="/media/css/base-min.css" />
 		<link rel="stylesheet" href="/media/css/fonts-min.css" />
+		<link rel="stylesheet" href="/media/css/grids-min.css" />
 		<link rel="stylesheet" href="/media/css/main-styles.css" />
 		{% block extra_style %}{% endblock %}
 		<script type="text/javascript" src="/media/js/jquery-1.3.2.min.js"></script>
 		{% block extra_script %}{% endblock %}
 	</head>
 	<body>
-		<div id="header">
-			{% block header %}{% endblock %}
-			<div class="right-align">
-				{% if user.is_authenticated %}
-				Welcome {{ user.username }} 
-				<a href="{% url auth_logout %}">Log out</a> | 
-				<a href="{% url auth_password_change %}">Change password</a>
-				{% else %}
-				<a href="{% url auth_login %}">Log in</a> | 
-				<a href="{% url registration_register %}">Register</a>
-				{% endif %}
+		<div id="doc3" class="yui-t2">
+			<div id="hd">
+				{% block header %}<h1>Extension Hub</h1>{% endblock %}
+				<div id="user" class="right-align">
+					{% if user.is_authenticated %}
+						Welcome {{ user.username }} 
+						<a href="{% url auth_logout %}">Log out</a> | 
+						<a href="{% url auth_password_change %}">Change password</a>
+					{% else %}
+						<a href="{% url auth_login %}">Log in</a> | 
+						<a href="{% url registration_register %}">Register</a>
+					{% endif %}
+				</div>
 			</div>
-		</div>
-		<div class="clear"></div>
-		<div id="content">
-			{% block content %}{% endblock %}
-		</div>
-		<div class="clear"></div>
-		<div id="footer">
-			{% block footer %}{% endblock %}
+			<div id="bd">
+				<div id="yui-main">
+					<div class="yui-b">
+						{% block content %}{% endblock %}
+					</div>
+				</div>
+				<div class="yui-b">
+					{% block sidebar %}{% endblock %}
+				</div>
+			</div>
+			<div id="ft">
+				{% block footer %}<center>&copy; 2010</center>{% endblock %}
+			</div>
 		</div>
 	</body>
 </html>
