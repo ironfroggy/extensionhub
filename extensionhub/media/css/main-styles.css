@@ -2,6 +2,14 @@
 	display: inline;
 }
 
+form#editor textarea#body {
+	display: none;
+}
+
+.bespin {
+	height: 300px;
+}
+
 .right-align {
 	float: right;
 }
