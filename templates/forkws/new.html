@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block extra_style %}
+	<link rel="stylesheet" href="/media/bespin/BespinEmbedded.compressed.css" />
+{% endblock %}
+{% block extra_script %}
+	<script src="/media/bespin/BespinEmbedded.compressed.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('form#editor').submit(function(event) {
+				var bespin = $('.bespin').get(0).bespin;
+				$('form#editor textarea#body').text(bespin.value);
+			});
+		});
+	</script>
+{% endblock %}
+
+{% block content %}
+
+    {% if fork %}
+        {% if fork.parent %}
+            <a href="{% url view_fork id=fork.parent.id %}">parent</a>
+        {% endif %}
+    {% else %}
+        <h3>new</h3>
+    {% endif %}
+
+    <form method="POST" id="editor">
+		<div class="bespin" data-bespinoptions='{"stealFocus": true }'>{{ fork.body|escape }}</div>
+        <textarea name="body" id="body"></textarea>
+        <input type="submit" value="create" />
+    </form>
+
+    {% if fork %}
+        <ul>
+            {% for child in fork.children %}
+                <li><a href="{% url view_fork id=child.id %}">{{ child }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}
