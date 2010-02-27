@@ -9,4 +9,5 @@ django_apps:
 django_extra_settings:
    ACCOUNT_ACTIVATION_DAYS: 7
    GIT_ROOT_PATH: /tmp/forkwsgitrepos/
+   LOGIN_REDIRECT_URL: /
 
